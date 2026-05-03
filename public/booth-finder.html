@@ -38,11 +38,16 @@
              <input type="text" placeholder="Enter your Pincode or Locality" style="flex:1; padding:14px; background:var(--bg-card); border:1px solid var(--border-glass); border-radius:10px; color:white;">
              <button class="btn btn-primary">Search</button>
           </div>
-          <div id="map" style="height:500px; background:rgba(0,0,0,0.2); border-radius:10px; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden;">
-             <img src="https://maps.googleapis.com/maps/api/staticmap?center=28.6139,77.2090&zoom=13&size=1000x500&key=YOUR_API_KEY" alt="Map" style="width:100%; height:100%; object-fit:cover; opacity:0.6;">
-             <div style="position:absolute; background:var(--bg-glass); backdrop-filter:blur(10px); padding:20px; border-radius:10px; border:1px solid var(--border-glass);">
-                <p style="font-weight:600;"><span class="material-symbols-outlined" style="display:inline-block; vertical-align:middle; margin-right:8px; color:var(--accent-1);">location_on</span> Nearest Booth: Sarvodaya Bal Vidyalaya</p>
-                <p style="font-size:0.9rem; color:var(--text-muted); margin-top:4px;">Sector 4, New Delhi - 110001</p>
+          <div id="map" style="height:500px; background:rgba(0,0,0,0.4); border-radius:10px; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; border:1px solid var(--border-glass);">
+             <img src="premium_dark_map_1777794488247.png" alt="Electoral Booth Map" style="width:100%; height:100%; object-fit:cover; opacity:0.8;">
+             <div style="position:absolute; background:var(--bg-glass); backdrop-filter:blur(20px); padding:20px; border-radius:16px; border:1px solid var(--border-glass); box-shadow: var(--shadow-glow);">
+                <div style="display:flex; align-items:center; gap:12px;">
+                  <span class="material-symbols-outlined" style="font-size:32px; color:var(--accent-1);">location_on</span>
+                  <div>
+                    <p style="font-weight:700; color:white;">Sarvodaya Bal Vidyalaya</p>
+                    <p style="font-size:0.85rem; color:var(--text-muted); margin-top:2px;">Sector 4, New Delhi - 110001</p>
+                  </div>
+                </div>
              </div>
           </div>
         </div>
@@ -51,8 +56,6 @@
   </main>
 
   <script src="script.js"></script>
-  <script>
-    if (window.lucide) lucide.createIcons();
-  </script>
+  <script src="assistant.js"></script>
 </body>
 </html>
