@@ -1,6 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  if (window.lucide) window.lucide.createIcons();
-
   const startBtn = document.getElementById('start-simulation-btn');
   const container = document.getElementById('vote-container');
 
@@ -13,11 +11,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Phase 1: Authentication Simulation
     container.innerHTML = `
-      <i data-lucide="loader" class="spin" style="width:48px; height:48px; color:var(--accent-2);"></i>
+      <span class="material-symbols-outlined spin" style="font-size:48px; color:var(--accent-2);">sync</span>
       <h3 style="margin-top:24px;">Authenticating Voter ID...</h3>
       <p style="color:var(--text-muted);">Verifying details with Google Cloud Identity Hub</p>
     `;
-    if (window.lucide) window.lucide.createIcons();
 
     setTimeout(() => {
       showQueue();
@@ -26,14 +23,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function showQueue() {
     container.innerHTML = `
-      <i data-lucide="users" style="width:48px; height:48px; color:var(--accent-1);"></i>
+      <span class="material-symbols-outlined" style="font-size:48px; color:var(--accent-1);">groups</span>
       <h3 style="margin-top:24px;">Digital Queue Management</h3>
       <p style="color:var(--text-muted); margin-bottom:32px;">You are at position #2 in the polling booth.</p>
       <div style="width:100%; height:8px; background:rgba(255,255,255,0.1); border-radius:4px; overflow:hidden;">
         <div style="width:70%; height:100%; background:var(--gradient-main); transition:width 2s ease-in-out;"></div>
       </div>
     `;
-    if (window.lucide) window.lucide.createIcons();
     
     setTimeout(() => {
       container.innerHTML += '<p style="margin-top:16px; color:#22c55e; font-weight:600;">Proceed to Officer Desk</p>';
@@ -86,12 +82,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     voteBtn.addEventListener('click', () => {
       container.innerHTML = `
-        <i data-lucide="check-circle" style="width:64px; height:64px; color:#22c55e;"></i>
+        <span class="material-symbols-outlined" style="font-size:64px; color:#22c55e;">check_circle</span>
         <h3 style="margin-top:24px;">Vote Recorded Successfully</h3>
         <p style="color:var(--text-muted); margin-bottom:32px;">Your receipt has been generated and secured via Google Cloud Storage.</p>
         <a href="/" class="btn btn-primary">Return Home</a>
       `;
-      if (window.lucide) window.lucide.createIcons();
     });
   }
 });

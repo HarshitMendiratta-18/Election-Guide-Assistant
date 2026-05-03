@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Register — ElectionGuide Pro</title>
   <link rel="stylesheet" href="style.css">
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 </head>
 <body>
   <nav class="navbar scrolled">
     <div class="container nav-inner">
       <a href="/" class="nav-logo">
-        <div class="logo-icon"><i data-lucide="vote" style="color:white; width:20px;"></i></div> 
+        <div class="logo-icon"><span class="material-symbols-outlined" style="color:white;">how_to_vote</span></div> 
         ElectionGuide
       </a>
       <ul class="nav-links">
@@ -46,7 +46,7 @@
             <div style="margin-bottom: 24px;">
               <label style="display:block; margin-bottom:8px; font-weight:600;">Upload ID Proof (Aadhar/Voter ID)</label>
               <div style="border:2px dashed var(--border-glass); padding:40px; border-radius:10px; text-align:center; cursor:pointer;" onclick="document.getElementById('idUpload').click()">
-                <i data-lucide="upload-cloud" style="width:40px; height:40px; color:var(--text-muted); margin-bottom:12px;"></i>
+                <span class="material-symbols-outlined" style="font-size:40px; color:var(--text-muted); margin-bottom:12px;">upload_file</span>
                 <p style="color:var(--text-muted);">Click to upload or drag and drop</p>
                 <input type="file" id="idUpload" style="display:none;" accept="image/*">
               </div>
@@ -55,7 +55,7 @@
           </form>
           <div id="regStatus" style="margin-top:24px; display:none;">
              <div style="display:flex; align-items:center; gap:12px; color:var(--accent-1);">
-                <i data-lucide="loader" class="spin"></i>
+                <span class="material-symbols-outlined spin">sync</span>
                 <span>Verifying documents with Google Vision AI...</span>
              </div>
           </div>
@@ -72,14 +72,15 @@
       document.getElementById('regStatus').style.display = 'block';
       setTimeout(() => {
         document.getElementById('regStatus').innerHTML = `
-          <div style="text-align:center;">
-            <i data-lucide="check-circle" style="width:48px; height:48px; color:#22c55e; margin-bottom:12px;"></i>
+        <div id="vote-container" class="glass-card" style="min-height:400px; text-align:center; display:flex; flex-direction:column; justify-content:center; align-items:center;">
+          <div id="entry-area" style="width:100%;">
+            <span class="material-symbols-outlined" style="font-size:64px; color:var(--accent-1); margin-bottom:24px;">fingerprint</span>
             <h3>Registration Successful!</h3>
             <p>Your application is being processed by the ECI.</p>
             <a href="/" class="btn btn-secondary" style="margin-top:20px;">Return Home</a>
           </div>
+        </div>
         `;
-        lucide.createIcons();
       }, 3000);
     });
   </script>

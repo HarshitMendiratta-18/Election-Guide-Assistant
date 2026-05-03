@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vote Simulator — ElectionGuide Pro</title>
   <link rel="stylesheet" href="style.css">
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 </head>
 <body>
   <nav class="navbar scrolled">
     <div class="container nav-inner">
       <a href="/" class="nav-logo">
-        <div class="logo-icon"><i data-lucide="vote" style="color:white; width:20px;"></i></div> 
+        <div class="logo-icon"><span class="material-symbols-outlined" style="color:white;">how_to_vote</span></div> 
         ElectionGuide
       </a>
       <ul class="nav-links">
@@ -35,7 +35,7 @@
 
         <div id="vote-container" class="glass-card" style="min-height:400px; text-align:center; display:flex; flex-direction:column; justify-content:center; align-items:center;">
           <div id="entry-area" style="width:100%;">
-            <i data-lucide="fingerprint" style="width:64px; height:64px; color:var(--accent-1); margin-bottom:24px;"></i>
+            <span class="material-symbols-outlined" style="font-size:64px; color:var(--accent-1); margin-bottom:24px;">fingerprint</span>
             <h3>Enter Voter ID to Start</h3>
             <p style="color:var(--text-secondary); margin-bottom:32px;">Use any sample ID (e.g., ABC1234567) to test the simulation.</p>
             <input type="text" id="voter-id-input" placeholder="Voter ID Number" style="width:100%; max-width:400px; padding:14px; background:var(--bg-card); border:1px solid var(--border-glass); border-radius:10px; color:white; margin-bottom:24px; text-align:center;">
