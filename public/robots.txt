@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://election-guide-assistant.vercel.app/sitemap.xml
