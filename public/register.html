@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register — ElectionGuide Pro</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body>
+  <nav class="navbar scrolled">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo">
+        <div class="logo-icon"><i data-lucide="vote" style="color:white; width:20px;"></i></div> 
+        ElectionGuide
+      </a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/register.html" class="active">Register</a></li>
+        <li><a href="/booth-finder.html">Booth Finder</a></li>
+        <li><a href="/vote.html">Vote Simulator</a></li>
+        <li><a href="/quiz.html">Awareness Quiz</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main style="padding-top:120px;">
+    <section class="section">
+      <div class="container">
+        <div style="text-align:center; margin-bottom:40px;">
+          <span class="section-label">Enrollment</span>
+          <h1 style="font-size:3rem; margin-top:8px;">Voter <span class="gradient-text">Registration</span></h1>
+          <p style="color:var(--text-secondary);">Secure, AI-powered registration process with document verification.</p>
+        </div>
+
+        <div class="glass-card" style="max-width: 600px; margin: 0 auto;">
+          <form id="registerForm">
+            <div style="margin-bottom: 24px;">
+              <label style="display:block; margin-bottom:8px; font-weight:600;">Full Name</label>
+              <input type="text" placeholder="Enter your full name" required style="width:100%; padding:14px; background:var(--bg-card); border:1px solid var(--border-glass); border-radius:10px; color:white;">
+            </div>
+            <div style="margin-bottom: 24px;">
+              <label style="display:block; margin-bottom:8px; font-weight:600;">Age</label>
+              <input type="number" placeholder="Must be 18 or older" min="18" required style="width:100%; padding:14px; background:var(--bg-card); border:1px solid var(--border-glass); border-radius:10px; color:white;">
+            </div>
+            <div style="margin-bottom: 24px;">
+              <label style="display:block; margin-bottom:8px; font-weight:600;">Upload ID Proof (Aadhar/Voter ID)</label>
+              <div style="border:2px dashed var(--border-glass); padding:40px; border-radius:10px; text-align:center; cursor:pointer;" onclick="document.getElementById('idUpload').click()">
+                <i data-lucide="upload-cloud" style="width:40px; height:40px; color:var(--text-muted); margin-bottom:12px;"></i>
+                <p style="color:var(--text-muted);">Click to upload or drag and drop</p>
+                <input type="file" id="idUpload" style="display:none;" accept="image/*">
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">Submit Application</button>
+          </form>
+          <div id="regStatus" style="margin-top:24px; display:none;">
+             <div style="display:flex; align-items:center; gap:12px; color:var(--accent-1);">
+                <i data-lucide="loader" class="spin"></i>
+                <span>Verifying documents with Google Vision AI...</span>
+             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    document.getElementById('registerForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      this.style.display = 'none';
+      document.getElementById('regStatus').style.display = 'block';
+      setTimeout(() => {
+        document.getElementById('regStatus').innerHTML = `
+          <div style="text-align:center;">
+            <i data-lucide="check-circle" style="width:48px; height:48px; color:#22c55e; margin-bottom:12px;"></i>
+            <h3>Registration Successful!</h3>
+            <p>Your application is being processed by the ECI.</p>
+            <a href="/" class="btn btn-secondary" style="margin-top:20px;">Return Home</a>
+          </div>
+        `;
+        lucide.createIcons();
+      }, 3000);
+    });
+  </script>
+</body>
+</html>

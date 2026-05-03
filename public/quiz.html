@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voter Quiz — ElectionGuide Pro</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body>
+  <nav class="navbar scrolled">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo">
+        <div class="logo-icon"><i data-lucide="vote" style="color:white; width:20px;"></i></div> 
+        ElectionGuide
+      </a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/register.html">Register</a></li>
+        <li><a href="/booth-finder.html">Booth Finder</a></li>
+        <li><a href="/vote.html">Vote Simulator</a></li>
+        <li><a href="/quiz.html" class="active">Awareness Quiz</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main style="padding-top:120px;">
+    <section class="section">
+      <div class="container" style="max-width:800px;">
+        <div style="text-align:center; margin-bottom:40px;">
+          <span class="section-label">Education Hub</span>
+          <h1 style="font-size:3rem; margin-top:8px;">Voter <span class="gradient-text">Awareness Quiz</span></h1>
+          <p style="color:var(--text-secondary);">Test your knowledge and earn a Digital Voter Awareness Certificate.</p>
+        </div>
+
+        <div id="quiz-container" class="glass-card" style="min-height:400px; text-align:center; display:flex; flex-direction:column; justify-content:center;">
+          <div id="quiz-start">
+            <i data-lucide="brain-circuit" style="width:64px; height:64px; color:var(--accent-1); margin-bottom:24px;"></i>
+            <h3>Ready to begin?</h3>
+            <p style="color:var(--text-secondary); margin-bottom:32px;">This quiz covers essential voting rights and procedures.</p>
+            <button class="btn btn-primary" id="start-quiz-btn">Start Quiz</button>
+          </div>
+          <div id="quiz-content" style="display:none; text-align:left;">
+            <div id="question-area"></div>
+            <div style="margin-top:40px; display:flex; justify-content:space-between; align-items:center;">
+              <span id="quiz-progress" style="color:var(--text-muted); font-size:0.9rem;"></span>
+              <button class="btn btn-primary" id="next-q-btn" disabled>Next Question</button>
+            </div>
+          </div>
+          <div id="quiz-result" style="display:none;">
+            <i data-lucide="award" style="width:64px; height:64px; color:var(--accent-3); margin-bottom:24px;"></i>
+            <h2 id="result-title">Perfect!</h2>
+            <p id="result-msg" style="color:var(--text-secondary); margin-bottom:32px;"></p>
+            <button class="btn btn-primary" onclick="location.reload()">Try Again</button>
+            <a href="/" class="btn btn-secondary" style="margin-left:12px;">Back Home</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="quiz.js"></script>
+</body>
+</html>

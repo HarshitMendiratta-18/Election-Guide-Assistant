@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Election Results — ElectionGuide Pro</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <nav class="navbar scrolled">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo">
+        <div class="logo-icon"><i data-lucide="vote" style="color:white; width:20px;"></i></div> 
+        ElectionGuide
+      </a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/register.html">Register</a></li>
+        <li><a href="/booth-finder.html">Booth Finder</a></li>
+        <li><a href="/vote.html">Vote Simulator</a></li>
+        <li><a href="/quiz.html">Awareness Quiz</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main style="padding-top:120px;">
+    <section class="section">
+      <div class="container">
+        <div style="text-align:center; margin-bottom:40px;">
+          <span class="section-label">Real-time Data</span>
+          <h1 style="font-size:3rem; margin-top:8px;">Electoral <span class="gradient-text">Insights</span></h1>
+          <p style="color:var(--text-secondary);">Visualizing the pulse of the nation with advanced data analytics.</p>
+        </div>
+
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:32px;">
+          <div class="glass-card">
+            <h3>Vote Distribution</h3>
+            <canvas id="voteChart" style="margin-top:20px;"></canvas>
+          </div>
+          <div class="glass-card">
+            <h3>Voter Turnout by Age</h3>
+            <canvas id="turnoutChart" style="margin-top:20px;"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    const ctx1 = document.getElementById('voteChart').getContext('2d');
+    new Chart(ctx1, {
+      type: 'doughnut',
+      data: {
+        labels: ['Party A', 'Party B', 'Party C', 'Others'],
+        datasets: [{
+          data: [45, 30, 15, 10],
+          backgroundColor: ['#818cf8', '#c084fc', '#fbbf24', '#22d3ee'],
+          borderWidth: 0
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: { legend: { labels: { color: 'white' } } }
+      }
+    });
+
+    const ctx2 = document.getElementById('turnoutChart').getContext('2d');
+    new Chart(ctx2, {
+      type: 'bar',
+      data: {
+        labels: ['18-25', '26-35', '36-50', '50+'],
+        datasets: [{
+          label: 'Turnout %',
+          data: [65, 78, 82, 70],
+          backgroundColor: '#818cf8'
+        }]
+      },
+      options: {
+        scales: {
+          y: { beginAtZero: true, grid: { color: 'rgba(255,255,255,0.1)' }, ticks: { color: 'white' } },
+          x: { grid: { display: false }, ticks: { color: 'white' } }
+        },
+        plugins: { legend: { display: false } }
+      }
+    });
+    if (window.lucide) lucide.createIcons();
+  </script>
+</body>
+</html>

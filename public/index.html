@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ElectionGuide Pro — Enterprise Election Intelligence</title>
+  <meta name="description" content="A state-of-the-art election simulation and voter awareness platform powered by Google Services.">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MOCK-ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MOCK-ID');
+  </script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo">
+        <div class="logo-icon"><i data-lucide="vote" style="color:white; width:20px;"></i></div> 
+        ElectionGuide <span style="font-weight:400; font-size:0.85rem; margin-left:4px; opacity:0.6;">PRO</span>
+      </a>
+      
+      <ul class="nav-links">
+        <li><a href="/" class="active">Home</a></li>
+        <li><a href="/register.html">Register</a></li>
+        <li><a href="/booth-finder.html">Booth Finder</a></li>
+        <li><a href="/vote.html">Vote Simulator</a></li>
+        <li><a href="/quiz.html">Awareness Quiz</a></li>
+      </ul>
+
+      <div style="display:flex; align-items:center; gap:16px;">
+        <button id="themeToggle" class="btn-icon" aria-label="Toggle Theme">
+          <i data-lucide="moon" style="width:18px;"></i>
+        </button>
+        <button class="google-auth-btn">
+          <img src="https://www.gstatic.com/images/branding/product/1x/gsa_512dp.png" style="width:18px;" alt="">
+          <span>Sign In</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <!-- Hero Section -->
+    <header class="hero" style="padding: 180px 0 100px; text-align:center; position:relative;">
+      <div class="container">
+        <span class="section-label">Voter Empowerment 2024</span>
+        <h1 class="section-title">Empowering Every <span class="gradient-text">Voice</span>,<br>Securing Every <span class="gradient-text">Vote</span></h1>
+        <p class="section-subtitle">A professional platform for election simulation, voter education, and real-time digital intelligence.</p>
+        <div style="display:flex; gap:16px; justify-content:center;">
+          <a href="/register.html" class="btn btn-primary">Start Registration</a>
+          <a href="/vote.html" class="btn btn-secondary">Try Simulator</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Stats Section -->
+    <section class="section">
+      <div class="container">
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:32px;">
+          <div class="glass-card" style="text-align:center;">
+            <h3 class="gradient-text" style="font-size:3rem; margin-bottom:8px;" id="stat-voters">0</h3>
+            <p style="text-transform:uppercase; font-size:0.75rem; letter-spacing:2px; font-weight:700; color:var(--text-muted);">Registered Voters (Cr+)</p>
+          </div>
+          <div class="glass-card" style="text-align:center;">
+            <h3 class="gradient-text" style="font-size:3rem; margin-bottom:8px;" id="stat-booths">0</h3>
+            <p style="text-transform:uppercase; font-size:0.75rem; letter-spacing:2px; font-weight:700; color:var(--text-muted);">Polling Booths (L+)</p>
+          </div>
+          <div class="glass-card" style="text-align:center;">
+            <h3 class="gradient-text" style="font-size:3rem; margin-bottom:8px;" id="stat-states">0</h3>
+            <p style="text-transform:uppercase; font-size:0.75rem; letter-spacing:2px; font-weight:700; color:var(--text-muted);">States Integrated</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Timeline (Core Assistant Feature) -->
+    <section class="section">
+      <div class="container">
+        <div style="max-width:800px; margin:0 auto;">
+          <span class="section-label">Your Journey</span>
+          <h2 class="section-title">The Path to <span class="gradient-text">Democracy</span></h2>
+          <div class="timeline">
+            <div class="timeline-item reveal">
+              <div class="timeline-dot"></div>
+              <div class="glass-card">
+                <h3>1. Enrollment & Verification</h3>
+                <p>Register yourself in the electoral rolls. Use our AI document verification to ensure your data is ready for the booth.</p>
+              </div>
+            </div>
+            <div class="timeline-item reveal">
+              <div class="timeline-dot"></div>
+              <div class="glass-card">
+                <h3>2. Locate Your Booth</h3>
+                <p>Use our real-time Booth Finder integrated with Google Maps to find the most efficient route to your polling station.</p>
+              </div>
+            </div>
+            <div class="timeline-item reveal">
+              <div class="timeline-dot"></div>
+              <div class="glass-card">
+                <h3>3. The Voting Process</h3>
+                <p>Experience the 7-step process from identity check to indelible ink and the final ballot press in our simulator.</p>
+              </div>
+            </div>
+            <div class="timeline-item reveal" style="margin-bottom:0;">
+              <div class="timeline-dot"></div>
+              <div class="glass-card">
+                <h3>4. Real-time Results</h3>
+                <p>Track the pulse of the nation with our high-fidelity data visualization dashboard as votes are tallied.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quiz CTA -->
+    <section class="section">
+      <div class="container">
+        <div class="glass-card" style="display:flex; justify-content:space-between; align-items:center; gap:40px; padding:60px;">
+          <div style="flex:1;">
+            <h2 class="section-title" style="margin-bottom:12px;">Test Your <span class="gradient-text">Awareness</span></h2>
+            <p style="color:var(--text-secondary); font-size:1.1rem;">Take our interactive quiz to learn more about electoral laws and procedures. Earn a Digital Voter Awareness Certificate!</p>
+            <a href="/quiz.html" class="btn btn-primary" style="margin-top:32px;">Start Quiz Hub</a>
+          </div>
+          <div style="flex:1; text-align:right;">
+            <i data-lucide="award" style="width:180px; height:180px; color:var(--accent-3); opacity:0.8;"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p style="color:var(--text-muted);">&copy; 2024 ElectionGuide Assistant | Built for Excellence.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

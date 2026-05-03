@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booth Finder — ElectionGuide Pro</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body>
+  <nav class="navbar scrolled">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo">
+        <div class="logo-icon"><i data-lucide="vote" style="color:white; width:20px;"></i></div> 
+        ElectionGuide
+      </a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/register.html">Register</a></li>
+        <li><a href="/booth-finder.html" class="active">Booth Finder</a></li>
+        <li><a href="/vote.html">Vote Simulator</a></li>
+        <li><a href="/quiz.html">Awareness Quiz</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main style="padding-top:120px;">
+    <section class="section">
+      <div class="container">
+        <div style="text-align:center; margin-bottom:40px;">
+          <span class="section-label">Location Services</span>
+          <h1 style="font-size:3rem; margin-top:8px;">Find Your <span class="gradient-text">Polling Booth</span></h1>
+          <p style="color:var(--text-secondary);">Locate your nearest polling station using Google Maps API.</p>
+        </div>
+
+        <div class="glass-card" style="padding: 20px;">
+          <div style="display:flex; gap:12px; margin-bottom:20px;">
+             <input type="text" placeholder="Enter your Pincode or Locality" style="flex:1; padding:14px; background:var(--bg-card); border:1px solid var(--border-glass); border-radius:10px; color:white;">
+             <button class="btn btn-primary">Search</button>
+          </div>
+          <div id="map" style="height:500px; background:rgba(0,0,0,0.2); border-radius:10px; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden;">
+             <img src="https://maps.googleapis.com/maps/api/staticmap?center=28.6139,77.2090&zoom=13&size=1000x500&key=YOUR_API_KEY" alt="Map" style="width:100%; height:100%; object-fit:cover; opacity:0.6;">
+             <div style="position:absolute; background:var(--bg-glass); backdrop-filter:blur(10px); padding:20px; border-radius:10px; border:1px solid var(--border-glass);">
+                <p style="font-weight:600;"><i data-lucide="map-pin" style="display:inline-block; vertical-align:middle; margin-right:8px; color:var(--accent-1);"></i> Nearest Booth: Sarvodaya Bal Vidyalaya</p>
+                <p style="font-size:0.9rem; color:var(--text-muted); margin-top:4px;">Sector 4, New Delhi - 110001</p>
+             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    if (window.lucide) lucide.createIcons();
+  </script>
+</body>
+</html>
